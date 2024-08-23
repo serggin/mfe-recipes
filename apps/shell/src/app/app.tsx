@@ -5,6 +5,7 @@ import NxWelcome from './nx-welcome';
 import { Link, Route, Routes } from 'react-router-dom';
 
 const Ui = React.lazy(() => import('ui/Module'));
+const TopAppBar = React.lazy(() => import('ui/TopAppBar'));
 
 const Remote1 = React.lazy(() => import('remote1/Module'));
 
@@ -14,6 +15,7 @@ export function App() {
   return (
     <React.Suspense fallback={null}>
       <Ui />
+      <TopAppBar />
       {/*<ul>
         <li>
           <Link to="/">Home</Link>
