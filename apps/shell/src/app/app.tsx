@@ -4,6 +4,8 @@ import NxWelcome from './nx-welcome';
 
 import { Link, Route, Routes } from 'react-router-dom';
 
+const Ui = React.lazy(() => import('ui/Module'));
+
 const Remote1 = React.lazy(() => import('remote1/Module'));
 
 const Remote2 = React.lazy(() => import('remote2/Module'));
@@ -11,9 +13,13 @@ const Remote2 = React.lazy(() => import('remote2/Module'));
 export function App() {
   return (
     <React.Suspense fallback={null}>
-      <ul>
+      <Ui />
+      {/*<ul>
         <li>
           <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/ui">Ui</Link>
         </li>
 
         <li>
@@ -23,9 +29,11 @@ export function App() {
         <li>
           <Link to="/remote2">Remote2</Link>
         </li>
-      </ul>
+      </ul>*/}
       <Routes>
         <Route path="/" element={<NxWelcome title="shell" />} />
+        <Route path="/ui" element={<Ui />} />
+        {/*<Route path="/ui" element={<Ui />} />*/}
 
         <Route path="/remote1" element={<Remote1 />} />
 

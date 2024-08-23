@@ -15,5 +15,11 @@ $ nx g @nx/react:host shell --directory=apps/shell --remotes=remote1,remote2
 ✔ Which E2E test runner would you like to use? · none
 ✔ What should be the project name and where should it be generated? · shell @ apps/shell
 
+
+## Adding remote library
+$ npx nx generate @nx/react:remote --name=ui --devServerPort=4203 --directory=apps/ui --host=shell --e2eTestRunner=none --projectNameAndRootFormat=as-provided --no-interactive
+
+$ npx nx generate @nx/react:component --name=TopAppBar --directory=apps/ui/src/TopAppBar --fileName=TopAppBar --nameAndDirectoryFormat=as-provided --no-interactive
+
 ### Run tests
 $ nx serve shell
