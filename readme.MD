@@ -10,7 +10,7 @@ $ npx create-nx-workspace@latest mfe-recipes --preset=react-monorepo
 ✔ Which CI provider would you like to use? · skip
 ✔ Would you like remote caching to make your build faster? · skip
 
-$ nx g @nx/react:host shell --directory=apps/shell --remotes=remote1,remote2
+$ nx g @nx/react:host shell --directory=apps/shell --remotes=remote0,remote1,remote2
 ✔ Which stylesheet format would you like to use? · css
 ✔ Which E2E test runner would you like to use? · none
 ✔ What should be the project name and where should it be generated? · shell @ apps/shell

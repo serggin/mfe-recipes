@@ -1,7 +1,7 @@
 {
-  "name": "ui",
+  "name": "remote0",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/ui/src",
+  "sourceRoot": "apps/remote0/src",
   "projectType": "application",
   "tags": [],
   "targets": {
@@ -11,15 +11,15 @@
       "defaultConfiguration": "production",
       "options": {
         "compiler": "babel",
-        "outputPath": "dist/apps/ui",
-        "index": "apps/ui/src/index.html",
+        "outputPath": "dist/apps/remote0",
+        "index": "apps/remote0/src/index.html",
         "baseHref": "/",
-        "main": "apps/ui/src/main.ts",
-        "tsConfig": "apps/ui/tsconfig.app.json",
-        "assets": ["apps/ui/src/favicon.ico", "apps/ui/src/assets"],
-        "styles": ["apps/ui/src/styles.css"],
+        "main": "apps/remote0/src/main.ts",
+        "tsConfig": "apps/remote0/tsconfig.app.json",
+        "assets": ["apps/remote0/src/favicon.ico", "apps/remote0/src/assets"],
+        "styles": ["apps/remote0/src/styles.css"],
         "scripts": [],
-        "webpackConfig": "apps/ui/webpack.config.ts"
+        "webpackConfig": "apps/remote0/webpack.config.ts"
       },
       "configurations": {
         "development": {
@@ -31,8 +31,8 @@
         "production": {
           "fileReplacements": [
             {
-              "replace": "apps/ui/src/environments/environment.ts",
-              "with": "apps/ui/src/environments/environment.prod.ts"
+              "replace": "apps/remote0/src/environments/environment.ts",
+              "with": "apps/remote0/src/environments/environment.prod.ts"
             }
           ],
           "optimization": true,
@@ -41,7 +41,7 @@
           "namedChunks": false,
           "extractLicenses": true,
           "vendorChunk": false,
-          "webpackConfig": "apps/ui/webpack.config.prod.ts"
+          "webpackConfig": "apps/remote0/webpack.config.prod.ts"
         }
       }
     },
@@ -49,16 +49,16 @@
       "executor": "@nx/react:module-federation-dev-server",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "ui:build",
+        "buildTarget": "remote0:build",
         "hmr": true,
-        "port": 4204
+        "port": 4201
       },
       "configurations": {
         "development": {
-          "buildTarget": "ui:build:development"
+          "buildTarget": "remote0:build:development"
         },
         "production": {
-          "buildTarget": "ui:build:production",
+          "buildTarget": "remote0:build:production",
           "hmr": false
         }
       }
@@ -67,16 +67,16 @@
       "executor": "@nx/web:file-server",
       "defaultConfiguration": "production",
       "options": {
-        "buildTarget": "ui:build",
+        "buildTarget": "remote0:build",
         "watch": false,
-        "port": 4204
+        "port": 4201
       },
       "configurations": {
         "development": {
-          "buildTarget": "ui:build:development"
+          "buildTarget": "remote0:build:development"
         },
         "production": {
-          "buildTarget": "ui:build:production"
+          "buildTarget": "remote0:build:production"
         }
       }
     }

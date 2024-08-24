@@ -51,7 +51,7 @@
       "options": {
         "buildTarget": "remote1:build",
         "hmr": true,
-        "port": 4201
+        "port": 4202
       },
       "configurations": {
         "development": {
@@ -69,7 +69,7 @@
       "options": {
         "buildTarget": "remote1:build",
         "watch": false,
-        "port": 4201
+        "port": 4202
       },
       "configurations": {
         "development": {

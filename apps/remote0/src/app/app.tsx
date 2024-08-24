@@ -4,7 +4,7 @@ import styles from './app.module.css';
 export function App() {
   return (
     <div>
-      <h1>Page 2 (remote2)</h1>
+      <h1>Home Page (remote0)</h1>
     </div>
   );
 }
