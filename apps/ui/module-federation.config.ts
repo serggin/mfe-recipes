@@ -6,6 +6,8 @@ const config: ModuleFederationConfig = {
   exposes: {
     './Module': './src/remote-entry.ts',
     './TopAppBar': '/src/TopAppBar/TopAppBar.tsx',
+    './Header': '/src/Header/Header.tsx',
+    './Text': '/src/Text/Text.tsx',
   },
 };
 

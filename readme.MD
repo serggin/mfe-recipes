@@ -21,5 +21,8 @@ $ npx nx generate @nx/react:remote --name=ui --devServerPort=4203 --directory=ap
 
 $ npx nx generate @nx/react:component --name=TopAppBar --directory=apps/ui/src/TopAppBar --fileName=TopAppBar --nameAndDirectoryFormat=as-provided --no-interactive
 
+$ npx nx generate @nx/react:component --name=Header --directory=apps/ui/src/Header --fileName=Header --nameAndDirectoryFormat=as-provided --no-interactive
+
+$ npx nx generate @nx/react:component --name=Text --directory=apps/ui/src/Text --fileName=Text --nameAndDirectoryFormat=as-provided --no-interactive
 ### Run tests
 $ nx serve shell

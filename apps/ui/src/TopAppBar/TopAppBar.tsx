@@ -7,16 +7,19 @@ interface NavItem {
 }
 
 interface IProps {
+  title?: string;
   navItems: NavItem[];
 }
 
-export function TopAppBar({navItems = []}: IProps) {
+export function TopAppBar({title = '', navItems = []}: IProps) {
   return (
     <div className={styles['container']}>
-      <h1>Welcome to TopAppBar!</h1>
+      <div className={styles.title}>{title}</div>
+      <div className={styles.nav}>
       {navItems.map((navItem: NavItem) => (
         <Link className={styles['link']} to={navItem.href} key={navItem.label}>{navItem.label}</Link>
       ))}
+      </div>
     </div>
   );
 }

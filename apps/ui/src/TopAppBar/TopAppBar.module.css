@@ -6,8 +6,20 @@
  * }
 */
 .container {
-    background-color: cyan;
+    background-color: lightcyan;
+    padding: 1rem;
 }
+
+.title {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.nav {
+    display: flex;
+    gap: 1rem;
+}
+
 .link {
-    color:blueviolet;
+    color: purple;
 }

@@ -18,11 +18,12 @@ const NAV_ITEMS = [
   {label: 'Page1', href: '/remote1'},
   {label: 'Page2', href: '/remote2'},
 ];
+const title = 'SPA: micro-frontend pattern with Module Federation';
 
 export function App() {
   return (
     <React.Suspense fallback={null}>
-      <TopAppBar navItems={NAV_ITEMS}/>
+      <TopAppBar title={title} navItems={NAV_ITEMS}/>
       {/*<ul>
         <li>
           <Link to="/">Home</Link>
