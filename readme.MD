@@ -16,7 +16,7 @@ $ nx g @nx/react:host shell --directory=apps/shell --remotes=remote0,remote1,rem
 ✔ What should be the project name and where should it be generated? · shell @ apps/shell
 
 
-## Adding remote library
+## Adding remote libraries and components
 $ npx nx generate @nx/react:remote --name=ui --devServerPort=4203 --directory=apps/ui --host=shell --e2eTestRunner=none --projectNameAndRootFormat=as-provided --no-interactive
 
 $ npx nx generate @nx/react:component --name=TopAppBar --directory=apps/ui/src/TopAppBar --fileName=TopAppBar --nameAndDirectoryFormat=as-provided --no-interactive
@@ -24,5 +24,23 @@ $ npx nx generate @nx/react:component --name=TopAppBar --directory=apps/ui/src/T
 $ npx nx generate @nx/react:component --name=Header --directory=apps/ui/src/Header --fileName=Header --nameAndDirectoryFormat=as-provided --no-interactive
 
 $ npx nx generate @nx/react:component --name=Text --directory=apps/ui/src/Text --fileName=Text --nameAndDirectoryFormat=as-provided --no-interactive
-### Run tests
+
+## Make remote assets available in the shell
+
+1. Assets from remote1 app move to src/assets/remote1 folder ("remote1" is the name of the remote app).
+2. Create file proxy.conf.json at the root of the host app ("shell"):
+```
+[{
+    "context": ["/assets/remote1"],
+    "target": "http://localhost:4202",
+    "secure": false
+}]
+```
+Here 4202 is the port number from apps/remote1/projects.json: targets/serve
+3. Add option to apps/shell/project.json: targets/serve/options:
+```
+"proxyConfig": "apps/shell/proxy.conf.json"
+```
+
+## Run tests
 $ nx serve shell

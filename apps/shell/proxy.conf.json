@@ -1,0 +1,5 @@
+[{
+    "context": ["/assets/remote1"],
+    "target": "http://localhost:4202",
+    "secure": false
+}]
