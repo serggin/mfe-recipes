@@ -5,7 +5,6 @@ import styles from './app.module.css';
 const Header = React.lazy(() => import('ui/Header'));
 const Text = React.lazy(() => import('ui/Text'));
 
-
 export function App() {
   return (
     <React.Suspense fallback={null}>

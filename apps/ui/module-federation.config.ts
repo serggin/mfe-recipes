@@ -8,6 +8,7 @@ const config: ModuleFederationConfig = {
     './TopAppBar': '/src/TopAppBar/TopAppBar.tsx',
     './Header': '/src/Header/Header.tsx',
     './Text': '/src/Text/Text.tsx',
+    './ImageCard': '/src/ImageCard/ImageCard.tsx',
   },
 };
 
