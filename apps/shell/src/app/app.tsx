@@ -4,6 +4,8 @@ import * as React from 'react';
 
 import { Link, Route, Routes } from 'react-router-dom';
 
+//const Store = React.lazy(() => import('store/Module'));
+
 const Remote0 = React.lazy(() => import('remote0/Module'));
 
 const Remote1 = React.lazy(() => import('remote1/Module'));
@@ -14,16 +16,16 @@ const Remote2 = React.lazy(() => import('remote2/Module'));
 const TopAppBar = React.lazy(() => import('ui/TopAppBar'));
 
 const NAV_ITEMS = [
-  {label: 'Home', href: '/'},
-  {label: 'Page1', href: '/remote1'},
-  {label: 'Page2', href: '/remote2'},
+  { label: 'Home', href: '/' },
+  { label: 'Page1', href: '/remote1' },
+  { label: 'Page2', href: '/remote2' },
 ];
 const title = 'SPA: micro-frontend pattern with Module Federation';
 
 export function App() {
   return (
     <React.Suspense fallback={null}>
-      <TopAppBar title={title} navItems={NAV_ITEMS}/>
+      <TopAppBar title={title} navItems={NAV_ITEMS} />
       {/*<ul>
         <li>
           <Link to="/">Home</Link>
@@ -42,6 +44,7 @@ export function App() {
       </ul>*/}
       <Routes>
         <Route path="/" element={<Remote0 />} />
+        {/*<Route path="/state" element={<State />} />*/}
         {/*<Route path="/remote0" element={<Remote0 />} />*/}
         {/*<Route path="/ui" element={<Ui />} />*/}
 

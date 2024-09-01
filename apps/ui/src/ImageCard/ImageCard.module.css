@@ -14,8 +14,8 @@
 }
 
 .img {
-    border: 2px solid lightgray;
+    border: 5px solid lightgray;
 }
-.img.selected {
+.selected {
     border-color: red;
 }

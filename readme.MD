@@ -42,5 +42,9 @@ Here 4202 is the port number from apps/remote1/projects.json: targets/serve
 "proxyConfig": "apps/shell/proxy.conf.json"
 ```
 
+## State as a remote app
+
+$ npx nx generate @nx/react:remote --name=store --devServerPort=4205 --directory=apps/store --host=shell --e2eTestRunner=none --projectNameAndRootFormat=as-provided --no-interactive
+
 ## Run tests
 $ nx serve shell

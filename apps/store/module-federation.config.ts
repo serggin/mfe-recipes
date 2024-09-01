@@ -1,12 +1,11 @@
 import { ModuleFederationConfig } from '@nx/webpack';
 
 const config: ModuleFederationConfig = {
-  name: 'remote1',
+  name: 'store',
 
   exposes: {
     './Module': './src/remote-entry.ts',
   },
-  remotes: ['ui', 'store'],
 };
 
 export default config;

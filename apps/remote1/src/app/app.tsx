@@ -1,6 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import React from 'react';
 import styles from './app.module.css';
+import useStore from 'store/Module';
 
 const Header = React.lazy(() => import('ui/Header'));
 const Text = React.lazy(() => import('ui/Text'));
@@ -14,6 +15,9 @@ const images = [
 ];
 
 export function App() {
+  const store = useStore();
+  const {favorites} = store;
+
   return (
     <React.Suspense fallback={null}>
       <div>
@@ -25,7 +29,11 @@ Some fixes should be made to this paths as well as proxy configuration is needed
         </Text>
         <div className={styles.cards}>
         {images.map((image) => (
-          <ImageCard key={image.id} src={image.src} title={image.title} />
+          <ImageCard key={image.id} 
+            src={image.src} 
+            title={image.title} 
+            selected={favorites.favoriteId === image.id}
+            onclick={() => {favorites.setFavoriteId(image.id)}}/>
         ))}
       </div>
     </div>
