@@ -18,20 +18,27 @@ export function App() {
       <div>
         <Header text='Page 1 (remote1)' />
         <Text>
-{`By default assets of the remote app have paths relative to remote app root.
+          {`By default assets of the remote app have paths relative to remote app root.
 This is OK when the remote app runs alone. And this paths are not valid in the context of the host app.
-Some fixes should be made to this paths as well as proxy configuration is needed.`}          
+Some fixes should be made to this paths as well as proxy configuration is needed.`}
         </Text>
         <div className={styles.cards}>
-        {images.map((image) => (
-          <ImageCard key={image.id} 
-            src={image.src} 
-            title={image.title} 
-            selected={favorites.favoriteId === image.id}
-            onclick={() => {favorites.setFavoriteId(image.id)}}/>
-        ))}
+          {images.map((image) => (
+            <ImageCard key={image.id}
+              src={image.src}
+              title={image.title}
+              selected={favorites.favoriteId === image.id}
+              onclick={() => { favorites.setFavoriteId(image.id) }} />
+          ))}
+        </div>
+        <Header level='2' text='App state demo' />
+        <Text>
+          {`SPA state is realized by special remote app.
+Image card can be marked as a favorite by a click on the image.
+Then the image acquires red border, and the card's id is saved at the state's storage.
+Other remote app (Page 2) displays favorite card.`}
+        </Text>
       </div>
-    </div>
     </React.Suspense >
   );
 }

@@ -4,6 +4,8 @@ import styles from './app.module.css';
 import images from 'remote1/images';
 import useStore from 'store/Module';
 
+const Header = React.lazy(() => import('ui/Header'));
+const Text = React.lazy(() => import('ui/Text'));
 const ImageCard = React.lazy(() => import('ui/ImageCard'));
 
 export function App() {
@@ -14,12 +16,18 @@ export function App() {
 
   return (
     <div>
-      <h1>Page 2 (remote2)</h1>
+      <Header text='Page 2 (remote2)' />
       {image ? (
-        <ImageCard key={image.id}
-          src={image.src}
-          title={image.title}
-          selected={true} />
+        <div>
+          <ImageCard key={image.id}
+            src={image.src}
+            title={image.title}
+            selected={true} />
+          <Text>{`Here favorite Image card is displayed.
+SPA state persists between routes and remote apps.
+This page also uses image card data from remote1 app.
+`}</Text>
+        </div>
       ) : (
         <div>No favorites set</div>
       )}
