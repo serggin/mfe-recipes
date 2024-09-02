@@ -6,6 +6,7 @@ const config: ModuleFederationConfig = {
   exposes: {
     './Module': './src/remote-entry.ts',
   },
+  remotes: ['remote1', 'ui', 'store'],
 };
 
 export default config;

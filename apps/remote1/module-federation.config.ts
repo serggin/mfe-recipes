@@ -5,6 +5,7 @@ const config: ModuleFederationConfig = {
 
   exposes: {
     './Module': './src/remote-entry.ts',
+    './images': './src/images.ts'
   },
   remotes: ['ui', 'store'],
 };

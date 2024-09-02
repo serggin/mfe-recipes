@@ -2,21 +2,16 @@
 import React from 'react';
 import styles from './app.module.css';
 import useStore from 'store/Module';
+import images from '../images';
 
 const Header = React.lazy(() => import('ui/Header'));
 const Text = React.lazy(() => import('ui/Text'));
 const ImageCard = React.lazy(() => import('ui/ImageCard'));
 
-const images = [
-  { id: 'img1', src: 'assets/remote1/img1.jpg', title: 'img1' },
-  { id: 'img2', src: 'assets/remote1/img2.jpg', title: 'img2' },
-  { id: 'img3', src: 'assets/remote1/img3.jpg', title: 'img3' },
-  { id: 'img4', src: 'assets/remote1/img4.jpg', title: 'img4' },
-];
-
 export function App() {
-  const store = useStore();
-  const {favorites} = store;
+  //const store = useStore();
+  //const {favorites} = store;
+  const favorites = useStore();
 
   return (
     <React.Suspense fallback={null}>

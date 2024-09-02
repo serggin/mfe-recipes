@@ -17,6 +17,7 @@
     "paths": {
       "remote0/Module": ["apps/remote0/src/remote-entry.ts"],
       "remote1/Module": ["apps/remote1/src/remote-entry.ts"],
+      "remote1/images": ["apps/remote1/src/images.ts"],
       "remote2/Module": ["apps/remote2/src/remote-entry.ts"],
       "store/Module": ["apps/store/src/remote-entry.ts"],
       "ui/Header": ["apps/ui/src/Header/Header.tsx"],
