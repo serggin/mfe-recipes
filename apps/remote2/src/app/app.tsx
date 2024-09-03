@@ -1,6 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import React from 'react';
-import styles from './app.module.css';
+//import styles from './app.module.css';
 import images from 'remote1/images';
 import useStore from 'store/Module';
 
@@ -12,7 +12,6 @@ export function App() {
   const favorites = useStore();
 
   const image = favorites.favoriteId && images.find((image) => favorites.favoriteId === image.id);
-  //console.log('favorites.favoriteId, image', favorites.favoriteId, image);
 
   return (
     <div>

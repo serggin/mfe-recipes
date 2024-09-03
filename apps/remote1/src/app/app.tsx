@@ -9,8 +9,6 @@ const Text = React.lazy(() => import('ui/Text'));
 const ImageCard = React.lazy(() => import('ui/ImageCard'));
 
 export function App() {
-  //const store = useStore();
-  //const {favorites} = store;
   const favorites = useStore();
 
   return (
@@ -42,6 +40,5 @@ Other remote app (Page 2) displays favorite card.`}
     </React.Suspense >
   );
 }
-
 
 export default App;
